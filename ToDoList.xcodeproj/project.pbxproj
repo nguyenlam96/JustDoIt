@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		05DFE4B021DEE8EC0006115D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DFE4AF21DEE8EC0006115D /* AppDelegate.swift */; };
-		05DFE4B221DEE8EC0006115D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DFE4B121DEE8EC0006115D /* ViewController.swift */; };
 		05DFE4B521DEE8EC0006115D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05DFE4B321DEE8EC0006115D /* Main.storyboard */; };
 		05DFE4B721DEE8EE0006115D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05DFE4B621DEE8EE0006115D /* Assets.xcassets */; };
 		05DFE4BA21DEE8EE0006115D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05DFE4B821DEE8EE0006115D /* LaunchScreen.storyboard */; };
+		05DFE4C521DEE9240006115D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DFE4C421DEE9240006115D /* LoginViewController.swift */; };
+		05DFE4C721DEE92D0006115D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DFE4C621DEE92D0006115D /* RegisterViewController.swift */; };
+		05DFE4C921DEF3910006115D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05DFE4C821DEF3900006115D /* GoogleService-Info.plist */; };
+		B5B7AF03282304FCBAF39F3D /* Pods_ToDoList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 851D8C394503017A9530B3C8 /* Pods_ToDoList.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		05DFE4AC21DEE8EC0006115D /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05DFE4AF21DEE8EC0006115D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		05DFE4B121DEE8EC0006115D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		05DFE4B421DEE8EC0006115D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		05DFE4B621DEE8EE0006115D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05DFE4B921DEE8EE0006115D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05DFE4BB21DEE8EE0006115D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05DFE4C421DEE9240006115D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		05DFE4C621DEE92D0006115D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		05DFE4C821DEF3900006115D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0E2081692E5A1B81A1D8CA6D /* Pods-ToDoList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ToDoList/Pods-ToDoList.debug.xcconfig"; sourceTree = "<group>"; };
+		851D8C394503017A9530B3C8 /* Pods_ToDoList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6368AB0E9182BE628B7ADB3 /* Pods-ToDoList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList.release.xcconfig"; path = "Pods/Target Support Files/Pods-ToDoList/Pods-ToDoList.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5B7AF03282304FCBAF39F3D /* Pods_ToDoList.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +49,8 @@
 			children = (
 				05DFE4AE21DEE8EC0006115D /* ToDoList */,
 				05DFE4AD21DEE8EC0006115D /* Products */,
+				E35C0CF219B60E177A705DC9 /* Pods */,
+				E3EF47A2D02AAB139E0C00FE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +65,57 @@
 		05DFE4AE21DEE8EC0006115D /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				05DFE4C321DEE9120006115D /* Model */,
+				05DFE4C221DEE90D0006115D /* Controller */,
+				05DFE4C121DEE90A0006115D /* View */,
 				05DFE4AF21DEE8EC0006115D /* AppDelegate.swift */,
-				05DFE4B121DEE8EC0006115D /* ViewController.swift */,
 				05DFE4B321DEE8EC0006115D /* Main.storyboard */,
 				05DFE4B621DEE8EE0006115D /* Assets.xcassets */,
 				05DFE4B821DEE8EE0006115D /* LaunchScreen.storyboard */,
+				05DFE4C821DEF3900006115D /* GoogleService-Info.plist */,
 				05DFE4BB21DEE8EE0006115D /* Info.plist */,
 			);
 			path = ToDoList;
+			sourceTree = "<group>";
+		};
+		05DFE4C121DEE90A0006115D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		05DFE4C221DEE90D0006115D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				05DFE4C421DEE9240006115D /* LoginViewController.swift */,
+				05DFE4C621DEE92D0006115D /* RegisterViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		05DFE4C321DEE9120006115D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E35C0CF219B60E177A705DC9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0E2081692E5A1B81A1D8CA6D /* Pods-ToDoList.debug.xcconfig */,
+				A6368AB0E9182BE628B7ADB3 /* Pods-ToDoList.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E3EF47A2D02AAB139E0C00FE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				851D8C394503017A9530B3C8 /* Pods_ToDoList.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +125,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 05DFE4BE21DEE8EE0006115D /* Build configuration list for PBXNativeTarget "ToDoList" */;
 			buildPhases = (
+				0734206BA4C894D96C7622BB /* [CP] Check Pods Manifest.lock */,
 				05DFE4A821DEE8EC0006115D /* Sources */,
 				05DFE4A921DEE8EC0006115D /* Frameworks */,
 				05DFE4AA21DEE8EC0006115D /* Resources */,
+				DA8927A1856637336AAD67A5 /* [CP] Embed Pods Frameworks */,
+				9F90DE36C96E349882131111 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05DFE4BA21DEE8EE0006115D /* LaunchScreen.storyboard in Resources */,
+				05DFE4C921DEF3910006115D /* GoogleService-Info.plist in Resources */,
 				05DFE4B721DEE8EE0006115D /* Assets.xcassets in Resources */,
 				05DFE4B521DEE8EC0006115D /* Main.storyboard in Resources */,
 			);
@@ -130,12 +188,98 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0734206BA4C894D96C7622BB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ToDoList-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F90DE36C96E349882131111 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ToDoList/Pods-ToDoList-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/gRPCCertificates-Firestore.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Firestore.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ToDoList/Pods-ToDoList-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA8927A1856637336AAD67A5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ToDoList/Pods-ToDoList-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ToDoList/Pods-ToDoList-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		05DFE4A821DEE8EC0006115D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05DFE4B221DEE8EC0006115D /* ViewController.swift in Sources */,
+				05DFE4C721DEE92D0006115D /* RegisterViewController.swift in Sources */,
+				05DFE4C521DEE9240006115D /* LoginViewController.swift in Sources */,
 				05DFE4B021DEE8EC0006115D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +424,7 @@
 		};
 		05DFE4BF21DEE8EE0006115D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E2081692E5A1B81A1D8CA6D /* Pods-ToDoList.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +443,7 @@
 		};
 		05DFE4C021DEE8EE0006115D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6368AB0E9182BE628B7ADB3 /* Pods-ToDoList.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
