@@ -13,12 +13,39 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var authListener: AuthStateDidChangeListenerHandle?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         FirebaseApp.configure()
+        // auto login
+        authListener = Auth.auth().addStateDidChangeListener({ [unowned self](auth, user) in
+            if user != nil {
+                if UserDefaults.standard.object(forKey: kCURRENT_USER) != nil {
+                    DispatchQueue.main.async {
+                        self.gotoMainView()
+                    }
+                } else {
+                    print("Doesn't have user in UserDefault")
+                }
+            } else {
+                print("User is nil")
+            }
+        })
+        
+        
         return true
+    }
+    
+    func gotoMainView() {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: kUSER_DID_LOGIN_NOTIFICATION),
+                                        object: nil,
+                                        userInfo: [ kUSER_ID: FirebaseUser.currentUserId ] )
+        
+        let mainView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainView") as! UITabBarController
+        mainView.selectedIndex = 0
+        self.window?.rootViewController = mainView
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

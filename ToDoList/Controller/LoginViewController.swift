@@ -7,24 +7,87 @@
 //
 
 import UIKit
-
+import FirebaseAuth
+import FirebaseStorage
+import ProgressHUD
 class LoginViewController: UIViewController {
-
+    
+    // MARK: - Properties
+    
+    // MARK: - IBOutlet
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var messageLabel: UILabel!
+    // MARK: - ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        firstSetup()
 
-        // Do any additional setup after loading the view.
+    }
+    deinit {
+        print("\(#file) is deinitialized")
+    }
+    // MARK: - Setup
+    func firstSetup() {
+        self.messageLabel.text = ""
+        dismissKeyboardWhenTappingAround()
+        
+    }
+    // MARK: - IBAction
+    @IBAction func goButtonPressed(_ sender: UIButton) {
+        
+        self.messageLabel.text = ""
+        let email = emailTextField.text!
+        let password = passwordTextField.text!
+        
+        if email == "" {
+            emailTextField.becomeFirstResponder()
+        } else if password == "" {
+            passwordTextField.becomeFirstResponder()
+        } else if (password.count < 6) {
+            self.messageLabel.textColor = .orange
+            self.messageLabel.text = "Password have to be >= 6 characters"
+        } else {
+            // all fields filled, start login
+            ProgressHUD.show("Login...")
+            FirebaseUser.loginUserWith(email: email, password: password) { (error) in
+                if (error != nil) {
+                    self.messageLabel.textColor = .orange
+                    self.messageLabel.text = "Incorrect email or password"
+                    print(error!.localizedDescription)
+                } else {
+                    // login success
+                    self.dismissKeyboard()
+                    let mainVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainView") as! UITabBarController
+                    mainVC.selectedIndex = 0
+                    self.present(mainVC, animated: true, completion: nil)
+                }
+            }
+            
+        }
+        
+    }
+    @IBAction func signUpButtonPressed(_ sender: UIButton) {
+        
+        let signUpVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SignUpView") as! SignUpViewController
+        
+        self.present(signUpVC, animated: true, completion: nil)
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    // MARK: - Helper Functions
+    
+    // MARK: - DismissKeyboard
+    func dismissKeyboardWhenTappingAround() {
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        self.view.isUserInteractionEnabled = true
+        self.view.addGestureRecognizer(tap)
+        
     }
-    */
-
+    @objc func dismissKeyboard() {
+        self.view.endEditing(true)
+    }
+    
 }

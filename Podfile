@@ -15,6 +15,7 @@ target 'ToDoList' do
     	pod 'Firebase/Firestore'
 
     	pod 'MBProgressHUD'
-
+	pod 'KRProgressHUD'
+	pod 'ProgressHUD'
 
 end
