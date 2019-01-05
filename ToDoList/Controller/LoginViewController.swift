@@ -45,6 +45,7 @@ class LoginViewController: UIViewController {
         } else if password == "" {
             passwordTextField.becomeFirstResponder()
         } else if (password.count < 6) {
+            ProgressHUD.dismiss()
             self.messageLabel.textColor = .orange
             self.messageLabel.text = "Password have to be >= 6 characters"
         } else {
@@ -52,6 +53,7 @@ class LoginViewController: UIViewController {
             ProgressHUD.show("Login...")
             FirebaseUser.loginUserWith(email: email, password: password) { (error) in
                 if (error != nil) {
+                    ProgressHUD.dismiss()
                     self.messageLabel.textColor = .orange
                     self.messageLabel.text = "Incorrect email or password"
                     print(error!.localizedDescription)
@@ -72,6 +74,17 @@ class LoginViewController: UIViewController {
         let signUpVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SignUpView") as! SignUpViewController
         
         self.present(signUpVC, animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func forgotPasswordPressed(_ sender: UIButton) {
+        
+        if emailTextField.text == "" {
+            emailTextField.becomeFirstResponder()
+        } else {
+            ProgressHUD.show("Sending email to reset password")
+            FirebaseUser.resetUserPassword(email: emailTextField.text!)
+        }
         
     }
     

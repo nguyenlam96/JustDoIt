@@ -23,11 +23,12 @@ class ListTableViewCell: UITableViewCell {
         
     }
 
-    // MARK: - Helper Functions
-    func bindData(list: List) {
+    func bindData(with list: List) {
+        
         self.nameLabel.text = list.name
-        self.priorityLabel.text = list.priority
-        self.numberOfItemLabel.text = "1"
+        self.priorityLabel.textColor = (list.priority == getPriority(.High) ) ? #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1) : #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
+        self.priorityLabel.text = (list.priority == getPriority(.High) ) ? "Urgent" : "Not urgent"
+        //self.numberOfItemLabel.text = ""
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"

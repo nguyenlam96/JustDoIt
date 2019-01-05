@@ -9,7 +9,8 @@
 import Foundation
 import FirebaseAuth
 import FirebaseStorage
-
+import Firebase
+import ProgressHUD
 struct Item {
     // MARK: - Properties
     var itemId: String
@@ -91,13 +92,14 @@ struct Item {
         
     }
     
-    // CRUD
+    // MARK: - CRUD
     static func saveItemInBackground(item: Item, completion: @escaping (_ error: Error?) -> Void ) {
         
         let itemDict = getItemDict(from: item)
-        let ref = reference(.Item).document()
-        ref.setData(itemDict)
-        
+        reference(.Item).document(item.itemId).setData(itemDict) { (error) in
+            completion(error)
+        }
+
     }
     
     static func deleteItemBackground(item: Item, completion: @escaping (_ error: Error?) -> Void ) {
@@ -115,6 +117,35 @@ struct Item {
         ref.setData(getItemDict(from: item)) { (error) in
             completion(error)
         }
+    }
+    
+    static func deleteItemBackground(list: List, completion: @escaping (_ error: Error?) -> Void ) {
+        
+        reference(.Item).whereField(kLIST_ID, isEqualTo: list.listId).getDocuments { (snapshot, error) in
+            
+            if error != nil {
+                print(error!.localizedDescription)
+                return
+            }
+            
+            guard let snapshot = snapshot else {
+                print("query snapshot is nil")
+                return
+            }
+            if !snapshot.isEmpty {
+                for doc in snapshot.documents {
+                    doc.reference.delete(completion: { (error) in
+                        completion(error)
+                    })
+                }
+            } else {
+                print("quary snapshot is empty")
+            }
+            
+            
+        }
+        
+
         
     }
     

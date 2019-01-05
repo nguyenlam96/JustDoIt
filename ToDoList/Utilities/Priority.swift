@@ -9,11 +9,9 @@
 import Foundation
 
 enum  Priority: String {
-    
     case High
-    case Medium
     case Low
-    
+    case All
 }
 func getPriority(_ priority: Priority) -> String {
     return priority.rawValue

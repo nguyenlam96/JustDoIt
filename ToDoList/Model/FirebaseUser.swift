@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import MBProgressHUD
+import ProgressHUD
 import FirebaseFirestore
 import FirebaseAuth
 
@@ -130,25 +130,20 @@ struct FirebaseUser {
             print(error.localizedDescription)
         }
     }
-    // MARK: - Fetch User
+    // MARK: - Forgot password
     
-    
-//    static func fetchCurrentUserFromFirestore(userId: String, completion: @escaping (_ user: FirebaseUser?) -> Void) {
-//
-//        reference(.User).document(userId).getDocument { (snapshot, error) in
-//
-//            guard let snapshot = snapshot else {  return }
-//
-//            if snapshot.exists {
-//                let userDict = snapshot.data()! as [String:Any]
-//                let user = FirebaseUser(from: userDict)
-//                completion(user)
-//            } else {
-//                completion(nil)
-//            }
-//
-//        }
-//    }
+    static func resetUserPassword(email: String) {
+        
+        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+            if error != nil {
+                ProgressHUD.showError("Email is incorrect")
+            } else {
+                ProgressHUD.showSuccess("Check your email to reset password!")
+            }
+        }
+       
+    }
+
     // MARK: - Register funcs
     static func registerUserWith(email: String, password: String, firstName: String, lastName: String, completion: @escaping (_ error: Error?) -> Void ) {
         

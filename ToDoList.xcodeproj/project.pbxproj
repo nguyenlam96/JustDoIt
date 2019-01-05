@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0583D16621E11948004C4F91 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D16521E11948004C4F91 /* ChangePasswordViewController.swift */; };
 		05DFE4B021DEE8EC0006115D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DFE4AF21DEE8EC0006115D /* AppDelegate.swift */; };
 		05DFE4B521DEE8EC0006115D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05DFE4B321DEE8EC0006115D /* Main.storyboard */; };
 		05DFE4B721DEE8EE0006115D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05DFE4B621DEE8EE0006115D /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0583D16521E11948004C4F91 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		05DFE4AC21DEE8EC0006115D /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05DFE4AF21DEE8EC0006115D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05DFE4B421DEE8EC0006115D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				05DFE4DA21DFB9600006115D /* ListViewController.swift */,
 				05DFE4DE21DFB98F0006115D /* AccountViewController.swift */,
 				05DFE4E421E033D40006115D /* ItemViewController.swift */,
+				0583D16521E11948004C4F91 /* ChangePasswordViewController.swift */,
 			);
 			name = "Main ";
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				05DFE4C521DEE9240006115D /* LoginViewController.swift in Sources */,
 				05DFE4DB21DFB9600006115D /* ListViewController.swift in Sources */,
 				05DFE4CE21DF00B50006115D /* ListReferences.swift in Sources */,
+				0583D16621E11948004C4F91 /* ChangePasswordViewController.swift in Sources */,
 				05DFE4B021DEE8EC0006115D /* AppDelegate.swift in Sources */,
 				05DFE4D421DF0AB90006115D /* Utilities.swift in Sources */,
 				05DFE4D021DF05FA0006115D /* Constants.swift in Sources */,
